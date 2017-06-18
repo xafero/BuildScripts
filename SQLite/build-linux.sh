@@ -9,7 +9,8 @@ chmod +x compile-interop-assembly-release.sh
 ./compile-interop-assembly-release.sh
 cd ../../
 mkdir build
-mkdir build/x64
-mv source/bin/2013/Release/bin/libSQLite.Interop.so ./build/x64/
-chmod -x build/x64/*.so
-file build/x64/*.so
+ARCH="$(uname -m)"
+mkdir build/$ARCH
+mv source/bin/2013/Release/bin/libSQLite.Interop.so ./build/$ARCH/
+chmod -x build/$ARCH/*.so
+file build/$ARCH/*.so
